@@ -3,10 +3,9 @@ package com.my_todolist.controllers;
 import com.my_todolist.entities.User;
 import com.my_todolist.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("api/v1")
@@ -21,14 +20,14 @@ public class UserController
     }
 
     @PostMapping("create")
-    public User addUser()
+    public User addUser(@RequestBody User user)
     {
-        return userService.addUser();
+        return userService.addUser(user);
     }
 
     @GetMapping("read")
-    public String getUser()
+    public Optional<User> getUser(@RequestBody User user)
     {
-        return userService.getUser();
+        return userService.getUser(user);
     }
 }

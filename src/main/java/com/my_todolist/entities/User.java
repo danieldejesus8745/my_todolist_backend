@@ -1,11 +1,25 @@
 package com.my_todolist.entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class User
 {
+    @Id
+    @GeneratedValue
     private Long id;
+    @Column
     private String name;
+    @Column
     private String email;
+    @Column
     private String password;
+
+    public User()
+    {
+
+    }
 
     public User(Long id, String name, String email, String password)
     {
