@@ -37,4 +37,9 @@ public class UserService
 
         return userFound;
     }
+
+    public User updateUser(User user)
+    {
+        return userRepository.save(user);
+    }
 }

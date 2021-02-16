@@ -30,4 +30,10 @@ public class UserController
     {
         return userService.getUser(user);
     }
+
+    @PutMapping("update")
+    public User updateUser(@RequestBody User user)
+    {
+        return userService.updateUser(user);
+    }
 }
