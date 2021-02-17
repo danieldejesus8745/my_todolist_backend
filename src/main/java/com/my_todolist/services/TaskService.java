@@ -23,9 +23,9 @@ public class TaskService
         return taskRepository.save(task);
     }
 
-    public List<Task> getTasks(Task task)
+    public List<Task> getTasks(String owner)
     {
-        return taskRepository.findTasksByOwner(task.getOwner());
+        return taskRepository.findTasksByOwner(owner);
     }
 
     public void deleteTask(Long taskId)
