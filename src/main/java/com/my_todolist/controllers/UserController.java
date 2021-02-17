@@ -25,7 +25,7 @@ public class UserController
         return userService.addUser(user);
     }
 
-    @GetMapping("read")
+    @PostMapping("read")
     public Optional<User> getUser(@RequestBody User user)
     {
         return userService.getUser(user);
